@@ -1,6 +1,8 @@
 p {
     text-align: center;
+    justify-content: center;
 }
+
 @media screen and (max-width: 1000px) {
     
 }
@@ -12,81 +14,33 @@ body {
     height: 100%;
     background-image: url(./assets/ezgif-6-ecde21b6a1.jpg);
 }
-
 .new {
-    border: 1px solid #000000;
     width: 75vw;
-    height: 15vh;
-    display: flex;
-    justify-content: space-between;
+    height: 20vh;
     background-color: white;
 }
 
-.one {
-    width: 100%;
-    border: 1px solid black;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    text-transform: capitalize;
-    font-size: xx-large;
-}
-.two {
-    border: 1px solid black;
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    text-transform: capitalize;
-    font-size: xx-large;
-}
-.three {
-    border: 1px solid black;
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    text-transform: capitalize;
-    font-size: xx-large;
-}
-.four {
-    border: 1px solid black;
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    text-transform: capitalize;
-    font-size: xx-large;
-}
-.right img:hover {
-    cursor: pointer;
-}
-.left:hover{
-    cursor: pointer;
-}
 .one:hover{
-    background-color: rgba(120, 207, 58, 0.221);
+    background-color: #f6b511b1;
+    cursor: pointer;
 }
 .two:hover{
-    background-color: rgba(255, 0, 0, 0.099);
+    background-color: rgba(255, 0, 0, 0.341);
+    cursor: pointer;
 }
 .three:hover{
-    background-color: rgba(120, 207, 58, 0.221);
+    background-color: #f6b511b1;
+    cursor: pointer;
 }
 .four:hover{
-    background-color: rgba(255, 0, 0, 0.099);
+    background-color: rgba(255, 0, 0, 0.356);
+    cursor: pointer;
 }
 
-
-
 .container {
+    margin-top: 20px;
+    margin-bottom: 20px;
     background-color: white;
-    border: 1px #000000 solid;
-    margin-bottom: 3px;
     max-height: 50px;
     display: flex;
     justify-content: space-evenly;
