@@ -6,44 +6,43 @@
     <title>Welcome to LingoQuest</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
     <link rel="stylesheet" href="./client/style.css">
-    <script src="index.js" defer></script>
+    <script src="./client/odd-one-out.js" defer></script>
 </head>
 <body class="bg-light">
     <div class="container-fluid p-1">
         <header class="d-flex flex-wrap justify-content-center py-3 mb-1 bg-white border" style="border-radius: 10px;">
-            <a href="/" class="d-flex align-items-center mx-3 me-md-auto text-dark text-decoration-none">
+            <a class="d-flex align-items-center mx-3 me-md-auto text-dark text-decoration-none">
             <span><img src="./client/assets/global-learning.png" style="max-height: 50px"></span>
               <span class="fs-2 lg-lg mx-4">LingoQuest</span>
             </a>
-            <div class="col-md-3 text-end mx-3">
-                <button type="button" class="btn btn-success btn-lg">Teachers</button>
-                <button type="button" class="btn btn-primary btn-lg" id="student">Students</button>
+            <div id='buttons' class="col-md-3 text-end mx-3">
+                <button type="button" class="btn btn-success btn-lg">Home</button>
               </div>
           </header>
 
-    <div class="container-fluid d-flex justify-content-center" style="border-radius: 5px;">
+    <div class="container-fluid d-flex justify-content-center mt-5" style="border-radius: 5px;">
 
         <div class="row bg-white border" style="width: 95%; border-radius: 10px;">
-            <div class="col-12 d-flex flex-wrap justify-content-center mt-5" style="min-height: 50vh;">
+            <div class="col-12 d-flex justify-content-center mt-5" style="min-height: 45vh;">
                 <section id="listSection">
 
                     <h1 class='mb-4'style="text-align: center;">Hola Amigos! Can you guess the Odd One Out! 💃</h1>
             
                     
                     <div class="new d-flex justify-content-evenly my-5">
-                        <div class="one d-flex justify-content-center align-items-center fs-3" style="min-width: 20%; border:2px solid #ffd100; border-radius: 10px; background-color: #ffffff84;">
+                        <div id='one' class="one d-flex justify-content-center align-items-center fs-3" style="min-width: 20%; border:2px solid #ffd100; border-radius: 10px; background-color: #ffffff84;">
                             <p>Beunos Dias</p>
                         </div>
             
-                        <div class="two d-flex justify-content-center align-items-center fs-3" style="min-width: 20%; border:1px solid #e93754; border-radius: 10px; background-color: #ffd100;">
+                        <div id='two' class="two d-flex justify-content-center align-items-center fs-3" style="min-width: 20%; border:1px solid #e93754; border-radius: 10px; background-color: #ffd100;">
                             <p>Hola</p>
                         </div>
 
-                        <div class="three d-flex justify-content-center align-items-center fs-3" style="min-width: 20%; border:2px solid #ffd100; border-radius: 10px; background-color: #ffffff82;">
+                        <div id='three' class="three d-flex justify-content-center align-items-center fs-3" style="min-width: 20%; border:2px solid #ffd100; border-radius: 10px; background-color: #ffffff82;">
                             <p>Beunos Tardes</p>
                         </div>
 
-                        <div class="four d-flex justify-content-center align-items-center fs-3" style="min-width: 20%; border:1px solid #e93754; border-radius: 10px;background-color: #ffd100;"">
+                        <div id="four" class="four d-flex justify-content-center align-items-center fs-3" style="min-width: 20%; border:1px solid #e93754; border-radius: 10px;background-color: #ffd100;"">
                             <p>Bibliotheca</p>                    
                         </div>
                     </div>

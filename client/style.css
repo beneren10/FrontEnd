@@ -14,25 +14,26 @@ body {
     height: 100%;
     background-image: url(./assets/ezgif-6-ecde21b6a1.jpg);
 }
+
 .new {
     width: 75vw;
     height: 20vh;
     background-color: white;
 }
 
-.one:hover{
+#one:hover{
     background-color: #f6b511b1;
     cursor: pointer;
 }
-.two:hover{
+#two:hover{
     background-color: rgba(255, 0, 0, 0.341);
     cursor: pointer;
 }
-.three:hover{
+#three:hover{
     background-color: #f6b511b1;
     cursor: pointer;
 }
-.four:hover{
+#four:hover{
     background-color: rgba(255, 0, 0, 0.356);
     cursor: pointer;
 }
