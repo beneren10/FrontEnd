@@ -24,7 +24,7 @@ async function fetchQuestions(){
         add(questions)
 
     }catch(error) {
-    console.log(error + "hello")
+    console.log(error + "hello world")
     }
 }
 
