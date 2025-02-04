@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
-    <link rel="stylesheet" href="./assets/styles.css">
+    <link rel="stylesheet" href="./assets/style.css">
     <link rel="icon" href="./assets/global-learning.png">
     <script src="./client/logout.js" defer></script>
     <script src="./client/dashboard.js" defer></script>
@@ -15,7 +15,7 @@
     <!-- Navbar After Logging In -->
     <div class="container-fluid p-1">
       <header class="d-flex flex-wrap justify-content-center py-3 mb-1 bg-white border" style="border-radius: 10px;">
-        <a href="/" class="d-flex align-items-center mx-3 me-md-auto text-dark text-decoration-none">
+        <a href="./landing.html" class="d-flex align-items-center mx-3 me-md-auto text-dark text-decoration-none">
         <span><img src="./assets/global-learning.png" style="max-height: 50px"></span>
           <span class="fs-2 lg-lg mx-4">LingoQuest</span>
         </a>
@@ -30,102 +30,85 @@
 
 <!-- Dashboard -->
    
-<div class="container-fluid" style="border-radius: 5px;">
+<div class="container-fluid bg-light">
 
   <div class="row">
       <div class="container-fluid d-flex justify-content-center flex-wrap">
-
-          <div class="row p-3 bg-white border mt-2" style="width: 95%; border-radius: 10px;">
-              <div class="col-12 d-flex flex-wrap align-items-center justify-content-center" style="min-height: 15vh;">
-                  <h1>Make Every Minute Count—Master Your Subjects, One Game at a Time!</h1>
+          <div class="row p-3 bg-light mt-0" style="width: 95%; border-radius: 10px;">
+              <div class="col-12 d-flex flex-wrap align-items-center justify-content-center" style="min-height: 10vh;">
+                  <h1>Learning made fun—choose your adventure!</h1>
+              </div>
+          <div class="container-fluid border d-flex justify-content-evenly flex-wrap bg-white mb-3" style="width: 60%; border-radius: 15px;">
+              <div class="col d-flex justify-content-center" style="min-height: 40vh;">
+                <div class="item-1 d-flex flex-wrap justify-content-center align-items-center bg-white" style="max-width: 70%;">
+                    <a href="./quiz.html"><img src="./assets/arrows.png" alt="Description of image" style="max-width: 150px; border-radius: 50px; margin-top: 30px; margin-right: 20px;"></a>
+                    <p class="fs-4 fw-bold">Español Express</p>
+                    <p>Click here and practice your Spanish language skills, with varying levels of difficulty. Try the next difficulty if you need a challenge!</p>
+                </div>
               </div>
 
-            <div class="col-4">
-              <div class="item-1 d-flex flex-wrap justify-content-center bg-white">
-                  <img src="./assets/images.png" alt="Description of image" style="max-width: 200px; border-radius: 50px;">
-                  <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cupiditate, harum? Sequi, animi praesentium eum esse voluptatum incidunt voluptates a dolorum unde nisi natus earum omnis accusantium minus, voluptas fugit debitis?</p>
-              </div>
-            </div>
-
-            <div class="col-4 d-flex flex-wrap align-items-end" >
-              <div class="item-1 d-flex flex-wrap justify-content-center bg-white gap-3">
-                  <img src="./assets/atlas.png" alt="Description of image" style="max-width: 150px; border-radius: 50px;" class="mb-2">
-                  <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cupiditate, harum? Sequi, animi praesentium eum esse voluptatum incidunt voluptates a dolorum unde nisi natus earum omnis accusantium minus, voluptas fugit debitis?</p>
-              </div>
-            </div>
-
-            <div class="col-4 d-flex flex-wrap align-items-end">
-              <div class="item-1 d-flex flex-wrap justify-content-center bg-white gap-5" style="padding-top: 25px;">
-                  <img src="./assets/languages.png" alt="Description of image" style="max-height: 100px; border-radius: 10px;">
-                  <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cupiditate, harum? Sequi, animi praesentium eum esse voluptatum incidunt voluptates a dolorum unde nisi natus earum omnis accusantium minus, voluptas fugit debitis?</p>
+              <div class="col d-flex justify-content-center">
+                <div class="item-1 d-flex flex-wrap justify-content-evenly align-items-center bg-white" style="max-width: 70%;">
+                    <a href="./odd-one-out.html"><img src="./assets/images.png" alt="Description of image" style="max-width: 200px; border-radius: 50px;"></a>
+                    <p class="fs-4 fw-bold">Odd One Out</p>
+                    <p class="mb-4 py-3">Click here and practice your vocabulary skills, spot the odd one out from a range of categories</p>
+                </div>
               </div>
             </div>
-          </div>
+        </div>
 
-          <div class="row d-flex align-items-start mx-3" style="min-height: 35vh;">
-              <div class="col-4">
-                  <div class="item-2 d-flex flex-wrap justify-content-center gap-3 pt-3">
-                      <img src="./assets/winner.png" alt="Description of image" style="max-width: 150px; border-radius: 10px;">
-                      <p class="border bg-white fs-4 p-1" style="min-height: 10vh; min-width: 100%; border-radius: 20px;">Compete with your friends on the Leaderboard</p>
+          <div class="row d-flex align-items-start mx-4 p-3" style="min-height: 35vh;">
+              <div class="col">
+                  <div class="item-2 d-flex flex-wrap justify-content-center border bg-white" style="min-height: 30vh; border-radius: 15px;">
+                      <p class="fs-4 mt-2" style="border-radius: 20px;">Compete with your friends on the Leaderboard</p>
+                      <table id='leaderboard' class="table mx-3 mb-4">
+                        <thead>
+                          <tr>
+                            <th scope="col">#</th>
+                            <th scope="col">First</th>
+                            <th scope="col">Last</th>
+                            <th scope="col">Score</th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                          <tr>
+                            <th scope="row">1</th>
+                            <td id="first-one">Mark</td>
+                            <td id="last-one">Otto</td>
+                            <td id="score-one">@mdo</td>
+                          </tr>
+                          <tr>
+                            <th scope="row">2</th>
+                            <td id="first-two">Jacob</td>
+                            <td id="last-two">Thornton</td>
+                            <td id="score-two">@fat</td>
+                          </tr>
+                          <tr>
+                            <th scope="row">3</th>
+                            <td id="first-three">Larry</td>
+                            <td id="last-three">the Bird</td>
+                            <td id="score-three">@twitter</td>
+                          </tr>
+                        </tbody>
+                      </table>
+                      
                   </div>
               </div>
-              <div class="col-4">
-                  <div class="item-2 d-flex flex-wrap justify-content-center gap-3 pt-3">
+              <div class="col">
+                <div class="item-2 d-flex flex-wrap justify-content-center pt-3 border bg-white" style="min-height: 30vh; border-radius: 15px;">
                       <img src="./assets/report-card.png" alt="Description of image" style="max-width: 150px; border-radius: 10px;">
-                      <p class="border bg-white fs-4 p-1" style="min-height: 10vh; min-width: 100%; border-radius: 20px;">Develop your language skills with a variety of fun games</p>
+                      <p class="border bg-white fs-4 p-1" style="min-width: 100%; border-radius: 20px;">Develop your language skills with a variety of fun games</p>
                   </div>
               </div>
-              <div class="col-4">
-                  <div class="item-2 d-flex pt-4 gap-4" style="display: flex; flex-direction: column; justify-content: center; align-items: center; margin-top: 5px;">
-                      <img src="./assets/rising.png" alt="Description of image" style="max-width: 125px; border-radius: 10px; margin-bottom: 3px;">
+              <div class="col">
+                  <div class="item-2 d-flex flex-wrap justify-content-center pt-3 border bg-white" style="min-height: 30vh; border-radius: 15px;">
+                      <img src="./assets/rising.png" alt="Description of image" style="max-width: 125px; border-radius: 10px; margin-bottom: 30px;">
                       <p class="border bg-white fs-4 p-1" style="min-height: 10vh; min-width: 100%; border-radius: 20px;">Track Students progress easily through our reporting.</p>
                   </div>
               </div>
           </div>
         </div>
   </div>
-
 </div>
-
-<!-- Leaderboard -->
-      <div class="container shadow p-3 my-5 mx-5 mb-5 bg-body-tertiary rounded ">
-        <div class="row">
-          <div class="col-sm-8">
-            <h4>Leaderboard</h4>
-          
-            <ol>
-                <li>John</li>
-                <li>Smith</li>
-                <li>Tom</li>
-            </ol>
-          </div>
-          <div class="col-sm-4">
-            
-              <div class="col-4 col-sm-4">
-                <h4>Your Quests</h4>
-                <ul>
-                    <li>Spanish</li>
-                    <li>Geography</li>
-                </ul>
-              </div>
-              <div class="col-4 col-sm-4">
-                <h4>Your Progress</h4>
-              </div>
-            
-          </div>
-        </div>
-      </div>
-
-      <!--  
-    <div class="dropdown">
-        <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
-        Subjects
-        </button>
-        <ul class="dropdown-menu">
-        <li><a class="dropdown-item" href="#">Geography</a></li>
-        <li><a class="dropdown-item" href="#">History</a></li>
-        <li><a class="dropdown-item" href="#">Math</a></li>
-        </ul>
-    </div> -->
 </body>
 </html>
