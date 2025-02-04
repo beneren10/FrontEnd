@@ -18,6 +18,5 @@ function getData(e){
     const formData = new FormData(formSelection);
     const formObject = Object.fromEntries(formData.entries()); // Convert FormData to an object
     console.log(formObject)
-    
-       
-    }    
+    formSelection.reset()
+}    
