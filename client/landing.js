@@ -6,5 +6,5 @@ studentLogin.addEventListener('click', buttonClick)
 
 function buttonClick(e) {
     e.preventDefault()
-    window.location.href = "http://127.0.0.1:5501/FrontEnd/login.html";
+    window.location.href = "http://127.0.0.1:5501/login.html";
 }
