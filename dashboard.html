@@ -6,82 +6,88 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
     <link rel="stylesheet" href="./assets/styles.css">
-    <link rel="icon" href="./assets/icons8-language-32.png">
+    <link rel="icon" href="./assets/global-learning.png">
     <script src="./client/logout.js" defer></script>
     <script src="./client/dashboard.js" defer></script>
     <title>Dashboard</title>
 </head>
 <body>
     <!-- Navbar After Logging In -->
-    <nav class="navbar navbar-expand-lg bg-body-tertiary ">
-        <!-- Navbar Brand -->
-          <div class="container-fluid row">
-            <div class="col-10">
-                <a class="navbar-brand text-primary fs-3 fw-bold" href="#">Lingo Quest</a>
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-                </button>
-            </div>
+    <div class="container-fluid p-1">
+      <header class="d-flex flex-wrap justify-content-center py-3 mb-1 bg-white border" style="border-radius: 10px;">
+        <a href="/" class="d-flex align-items-center mx-3 me-md-auto text-dark text-decoration-none">
+        <span><img src="./assets/global-learning.png" style="max-height: 50px"></span>
+          <span class="fs-2 lg-lg mx-4">LingoQuest</span>
+        </a>
+        
+          <div id='buttons' class="col-md-3 text-end mx-3">
+            <button type="button" class="btn btn-success btn-lg" href="./dashboard.html">Home</button>
+            <button type="button" class="btn btn-success btn-lg">Log Out</button>
             
-  
-            <!-- Navbar -->
-            <div class="collapse navbar-collapse col-2 float-end" id="navbarSupportedContent">
-              <div class="float-end">
-                  <ul class="navbar-nav me-2 mb-2 mb-lg-0">
-                    <!-- <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle text-primary fs-5 fw-medium" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                          Languages
-                        </a>
-                        <ul class="dropdown-menu">
-                          <li><a class="dropdown-item active" href="#">Spanish</a></li>
-                          <li><a class="dropdown-item " href="#">Latin</a></li>
-                        </ul>
-                      </li> -->
+          </div>
+          
+      </header>
 
-                    <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle text-primary fs-5 fw-medium" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                        Subjects
-                    </a>
-                    <ul class="dropdown-menu">
-                        <li><a class="dropdown-item active" href="#">Spanish</a></li>
-                        <li><a class="dropdown-item " href="#">Geography</a></li>
-                    </ul>
-                    </li>
-                    <li class="nav-item">
-                    <a class="nav-link text-primary fs-5 fw-medium" href="#">Log Out</a>
-                    </li>
-                </ul>
+<!-- Dashboard -->
+   
+<div class="container-fluid" style="border-radius: 5px;">
+
+  <div class="row">
+      <div class="container-fluid d-flex justify-content-center flex-wrap">
+
+          <div class="row p-3 bg-white border mt-2" style="width: 95%; border-radius: 10px;">
+              <div class="col-12 d-flex flex-wrap align-items-center justify-content-center" style="min-height: 15vh;">
+                  <h1>Make Every Minute Count—Master Your Subjects, One Game at a Time!</h1>
+              </div>
+
+            <div class="col-4">
+              <div class="item-1 d-flex flex-wrap justify-content-center bg-white">
+                  <img src="./assets/images.png" alt="Description of image" style="max-width: 200px; border-radius: 50px;">
+                  <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cupiditate, harum? Sequi, animi praesentium eum esse voluptatum incidunt voluptates a dolorum unde nisi natus earum omnis accusantium minus, voluptas fugit debitis?</p>
+              </div>
+            </div>
+
+            <div class="col-4 d-flex flex-wrap align-items-end" >
+              <div class="item-1 d-flex flex-wrap justify-content-center bg-white gap-3">
+                  <img src="./assets/atlas.png" alt="Description of image" style="max-width: 150px; border-radius: 50px;" class="mb-2">
+                  <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cupiditate, harum? Sequi, animi praesentium eum esse voluptatum incidunt voluptates a dolorum unde nisi natus earum omnis accusantium minus, voluptas fugit debitis?</p>
+              </div>
+            </div>
+
+            <div class="col-4 d-flex flex-wrap align-items-end">
+              <div class="item-1 d-flex flex-wrap justify-content-center bg-white gap-5" style="padding-top: 25px;">
+                  <img src="./assets/languages.png" alt="Description of image" style="max-height: 100px; border-radius: 10px;">
+                  <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cupiditate, harum? Sequi, animi praesentium eum esse voluptatum incidunt voluptates a dolorum unde nisi natus earum omnis accusantium minus, voluptas fugit debitis?</p>
               </div>
             </div>
           </div>
-        </nav>
 
-<!-- Dashboard -->
-    <div class="mx-auto p-2 shadow-lg p-3 mb-1 bg-body-tertiary rounded text-info fw-medium" style="width: 500px;">
-        <h4>Welcome to your dashboard <strong>Sonal</strong> ! </h4>
-      </div>
-
-
-      <div class="grid row  shadow p-3 my-5 mx-5 mb-5 bg-body-tertiary rounded text-center ">
-        <div class="p-2 col-4 align-items-center">
-            <div><img src="./assets/icons8-language-100.png" alt=""></div>
-            
-            <h4>Test Your Language Skills</h4>
+          <div class="row d-flex align-items-start mx-3" style="min-height: 35vh;">
+              <div class="col-4">
+                  <div class="item-2 d-flex flex-wrap justify-content-center gap-3 pt-3">
+                      <img src="./assets/winner.png" alt="Description of image" style="max-width: 150px; border-radius: 10px;">
+                      <p class="border bg-white fs-4 p-1" style="min-height: 10vh; min-width: 100%; border-radius: 20px;">Compete with your friends on the Leaderboard</p>
+                  </div>
+              </div>
+              <div class="col-4">
+                  <div class="item-2 d-flex flex-wrap justify-content-center gap-3 pt-3">
+                      <img src="./assets/report-card.png" alt="Description of image" style="max-width: 150px; border-radius: 10px;">
+                      <p class="border bg-white fs-4 p-1" style="min-height: 10vh; min-width: 100%; border-radius: 20px;">Develop your language skills with a variety of fun games</p>
+                  </div>
+              </div>
+              <div class="col-4">
+                  <div class="item-2 d-flex pt-4 gap-4" style="display: flex; flex-direction: column; justify-content: center; align-items: center; margin-top: 5px;">
+                      <img src="./assets/rising.png" alt="Description of image" style="max-width: 125px; border-radius: 10px; margin-bottom: 3px;">
+                      <p class="border bg-white fs-4 p-1" style="min-height: 10vh; min-width: 100%; border-radius: 20px;">Track Students progress easily through our reporting.</p>
+                  </div>
+              </div>
+          </div>
         </div>
-        <div class="p-2 col-4">
-            <div> <img src="./assets/icons8-podium-100.png" alt=""></div>
-           
-            <h4>Compete against friends on the leaderboard</h4>
-        </div>
-        <div class="p-2 col-4">
-            <div>   <img src="./assets/icons8-coliseum-100.png" alt=""></div>
-         
-            <h4>Improve Your Knowledge</h4>
-        </div>
+  </div>
 
-      </div>
+</div>
 
-
+<!-- Leaderboard -->
       <div class="container shadow p-3 my-5 mx-5 mb-5 bg-body-tertiary rounded ">
         <div class="row">
           <div class="col-sm-8">
