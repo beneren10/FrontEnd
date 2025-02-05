@@ -3,9 +3,9 @@ const { renderDOM } = require('./helpers');
 let dom;
 let document;
 
-describe('index.html', () => {
+describe('dashboard.html', () => {
   beforeEach(async () => {
-    dom = await renderDOM('./index.html');
+    dom = await renderDOM('./dashboard.html');
     document = await dom.window.document;
   })
   
