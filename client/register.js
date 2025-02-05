@@ -6,7 +6,7 @@ studentLogin.addEventListener('click', buttonClick)
 
 function buttonClick(e) {
     e.preventDefault()
-    window.location.href = "http://127.0.0.1:5501/login.html";
+    window.location.href = "login.html";
 }
 
 document.getElementById("registerForm").addEventListener("submit", async (e) => {
