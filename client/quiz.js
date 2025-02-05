@@ -3,25 +3,40 @@ let quizData = [];
 // DOM elements#
 const gameContainer = document.getElementById('gameContainer');
 const question = document.querySelector('.question')
+let level = document.getElementById('difficulty').value;
 
 const scores = document.querySelector('#scoreContainer p span')
 
 let currentQuestion = 0;
 let score = 0;
 
-async function startQuiz() {
-    const difficulty = document.getElementById('difficulty').value;
-    try {
-      const response = await fetch(difficulty);
-      quizData = await response.json();
-      currentQuestion = 0;
-      score = 0;
-      gameContainer.style.display = 'block';
-      loadQuestion();
-    } catch (error) {
-      console.error('Error loading quiz data:', error);
-    }
+async function fetchQuizData(level) {
+  try {
+    const response = await fetch(`http://localhost:3000/spanish/games/translate/${level}`);
+    const quizData = await response.json();
+    console.table('Quiz Data:', quizData);
+    currentQuestion = 0;
+    score = 0;
+    gameContainer.style.display = 'block';
+    loadQuestion();
+  } catch (error) {
+    console.error('Error fetching quiz data:', error);
   }
+}
+
+// async function startQuiz() {
+//     const difficulty = document.getElementById('difficulty').value;
+//     try {
+//       const response = await fetch(difficulty);
+//       quizData = await response.json();
+//       currentQuestion = 0;
+//       score = 0;
+//       gameContainer.style.display = 'block';
+//       loadQuestion();
+//     } catch (error) {
+//       console.error('Error loading quiz data:', error);
+//     }
+//   }
 
 function loadQuestion() {
     console.log("inside loadQuestion");
