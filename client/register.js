@@ -1,7 +1,20 @@
-document.getElementById("register-form").addEventListener("submit", async (e) => {
+const teacherLogin = document.querySelector('#teachers')
+const studentLogin = document.querySelector('#students')
+
+teacherLogin.addEventListener('click', buttonClick)
+studentLogin.addEventListener('click', buttonClick)
+
+function buttonClick(e) {
+    e.preventDefault()
+    window.location.href = "login.html";
+}
+
+document.getElementById("registerForm").addEventListener("submit", async (e) => {
     e.preventDefault();
 
     const form = new FormData(e.target);
+
+    console.log(form)
 
     const options = {
         method: "POST",
@@ -19,10 +32,11 @@ document.getElementById("register-form").addEventListener("submit", async (e) =>
 
     const response = await fetch("http://localhost:3000/users/register", options);
     const data = await response.json();
+    console.log(data)
 
     if (response.status == 201) {
-        window.location.assign("login.html"); // redirect to login page
-        // alert("Registered!");
+        alert("success")
+        window.location.assign("login.html");
     } else {
         alert(data.error);
     }

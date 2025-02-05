@@ -1,5 +1,5 @@
-console.log("Logout loaded!")
+
 document.getElementById('logout').addEventListener('click', () => {
     localStorage.removeItem('token');
-    window.location.assign('./landing.html');
+    window.location.assign('./landing.html')
 })

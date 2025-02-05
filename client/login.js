@@ -10,25 +10,19 @@ document.getElementById("login-form").addEventListener("submit", async (e) => {
             'Content-Type': 'application/json'
         },
         body: JSON.stringify({
-            username: form.get("student_login"),
+
+            student_login: form.get("student_login"),
             password: form.get("password")
         })
     }
-
     const response = await fetch("http://localhost:3000/users/login", options);
     const data = await response.json();
-
+    console.log(data)
 
     if (response.status == 200) {
-        console.log(data);
-        // document.cookie = `token=${data.token}`;
-        
         localStorage.setItem("token", data.token);
-        console.log(data.token);
-        console.log("login successful");
-        window.location.assign("./dashboard.html"); // redirect to index page
-        // alert("Logged in!");
-    } else {
+        window.location.assign("dashboard.html");
+      } else {
         alert(data.error);
-    }
+      }
 })

@@ -23,7 +23,6 @@ async function startQuiz() {
     }
   }
 
-
 function loadQuestion() {
     console.log("inside loadQuestion");
   if (currentQuestion >= quizData.length) {

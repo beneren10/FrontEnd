@@ -13,7 +13,7 @@
 <body class="bg-light">
   <div class="container-fluid p-1">
     <header class="d-flex flex-wrap justify-content-center py-3 mb-1 bg-white border" style="border-radius: 10px;">
-      <a href="/" class="d-flex align-items-center mx-3 me-md-auto text-dark text-decoration-none">
+      <a href="./landing.html" class="d-flex align-items-center mx-3 me-md-auto text-dark text-decoration-none">
       <span><img src="./assets/global-learning.png" style="max-height: 50px"></span>
         <span class="fs-2 lg-lg mx-4">LingoQuest</span>
       </a>
@@ -27,14 +27,15 @@
       <div class="container-fluid d-flex justify-content-center flex-wrap" style="border-radius: 5px;">
         <div class="row p-3 bg-white border mt-2" style="width: 45%; border-radius: 10px;">
           <h3 class="text-align-center">Login Here</h3>
-          <form action="" id="login-form">
+          <form id="login-form">
               <div class="mb-3">
-                  <label for="student_login" class="form-label" name="student_login">Student Login</label>
-                  <input type="text" class="form-control" id="student_login" placeholder="Please enter your unique student login given by your school">
+
+                  <label for="student_login" class="form-label">Student Login</label>
+                  <input type="text" class="form-control" id="student_login" name='student_login' placeholder="Please enter your unique student login given by your school">
               </div>
               <div class="mb-3">
-                  <label for="password" class="form-label" name="password">Password</label>
-                  <input type="password" class="form-control" id="password" placeholder="Please enter your password">
+                  <label for="password" class="form-label">Password</label>
+                  <input type="password" class="form-control" id="password" name="password" placeholder="Please enter your password">
               </div>
               <button type="submit" class="btn btn-primary mb-3">Log In</button>
           </form>
