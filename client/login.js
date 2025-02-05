@@ -1,12 +1,3 @@
-const home = document.querySelector('#login-form button')
-
-home.addEventListener('click', buttonClick)
-
-function buttonClick(e) {
-    e.preventDefault()
-    window.location.href = "http://127.0.0.1:5501/dashboard.html";
-}
-
 document.getElementById("login-form").addEventListener("submit", async (e) => {
     e.preventDefault();
 
@@ -19,17 +10,17 @@ document.getElementById("login-form").addEventListener("submit", async (e) => {
             'Content-Type': 'application/json'
         },
         body: JSON.stringify({
-            username: form.get("studentLogin"),
+            student_login: form.get("student_login"),
             password: form.get("password")
         })
     }
-
     const response = await fetch("http://localhost:3000/users/login", options);
     const data = await response.json();
+    console.log(data)
 
     if (response.status == 200) {
         localStorage.setItem("token", data.token);
-        window.location.assign("board.html");
+        window.location.assign("dashboard.html");
       } else {
         alert(data.error);
       }
