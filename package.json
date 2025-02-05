@@ -3,14 +3,17 @@
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "dev": "live-server",
+    "test": "jest --watchAll --verbose",
+    "coverage": "jest --coverage"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
-  "description": "",
   "dependencies": {
     "jest": "^29.7.0",
+    "jsdom": "^26.0.0",
     "live-server": "^1.2.2"
-  }
+  },
+  "description": ""
 }
