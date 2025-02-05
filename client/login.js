@@ -1,8 +1,34 @@
-const home = document.querySelector('#buttons button')
+document.getElementById("login-form").addEventListener("submit", async (e) => {
+    e.preventDefault();
 
-home.addEventListener('click', buttonClick)
+    const form = new FormData(e.target);
 
-function buttonClick(e) {
-    e.preventDefault()
-    window.location.href = "http://127.0.0.1:5500/FrontEnd/login.html";
-}
+    const options = {
+        method: "POST",
+        headers: {
+            'Accept': 'application/json',
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({
+            username: form.get("student_login"),
+            password: form.get("password")
+        })
+    }
+
+    const response = await fetch("http://localhost:3000/users/login", options);
+    const data = await response.json();
+
+
+    if (response.status == 200) {
+        console.log(data);
+        // document.cookie = `token=${data.token}`;
+        
+        localStorage.setItem("token", data.token);
+        console.log(data.token);
+        console.log("login successful");
+        window.location.assign("./dashboard.html"); // redirect to index page
+        // alert("Logged in!");
+    } else {
+        alert(data.error);
+    }
+})
