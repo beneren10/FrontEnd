@@ -48,7 +48,6 @@ function loadQuestion(quizData) {
   if (currentQuestion >= quizData.length) {
     question.innerHTML = `<h2>Quiz Finished! Final Score: ${score}</h2>`;
     postScore(score);
-    return;
   }
 
   const questionData = quizData[currentQuestion];
