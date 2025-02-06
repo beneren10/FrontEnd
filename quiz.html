@@ -10,7 +10,7 @@
     <script src="./client/logout.js" defer></script>
     <title>Translate Quiz</title>
 </head>
-<body>
+<body class="bg-light">
   <div class="container-fluid p-1">
     <header class="d-flex flex-wrap justify-content-center py-3 mb-1 bg-white border" style="border-radius: 10px;">
       <a href="/" class="d-flex align-items-center mx-3 me-md-auto text-dark text-decoration-none">
@@ -20,7 +20,7 @@
       
         <div id='buttons' class="col-md-3 text-end mx-3">
           <button type="button" class="btn btn-success btn-lg">Home</button>
-          <button type="button" class="btn btn-success btn-lg" id="logout">Log Out</button>
+          <button type="button" class="btn btn-warning btn-lg" id="logout">Log Out</button>
           
         </div>
         
@@ -33,36 +33,36 @@
 
                 <h2 class='mb-4'style="text-align: center;">Hola Amigos! <br>Can you Translate the Right One! 💃</h2>
 
+            <div class="box">
                 <!-- difficulty selection -->
-              <div class="d-flex justify-content-center gap-3 align-items-center">
-                <label for="difficulty">Select Difficulty:</label>
-                <select id="difficulty">
-                    <option value="easy">Easy</option>
-                    <option value="medium">Medium</option>
-                    <option value="hard">Hard</option>
-                </select>
-                <button id="start">Start Quiz</button>
+                <div class="inner d-flex justify-content-center" style="flex-direction: column;">
+                  <div class="d-flex justify-content-center gap-3 align-items-center">
+                    <label for="difficulty">Select Difficulty:</label>
+                    <select id="difficulty">
+                        <option value="easy">Easy</option>
+                        <option value="medium">Medium</option>
+                        <option value="hard">Hard</option>
+                    </select>
+                    <button id="start">Start Quiz</button>
+                  </div>
+                </div>  
 
-                <!-- score container -->
-
-                <div class="score d-flex justify-content-center mt-4" id="scoreContainer">
+                <div class="child">
+                  <div class="score d-flex justify-content-center mt-4" id="scoreContainer">
                     <p class="score">Score: <span>0</span></p>
+                  </div>
+                  <!-- question container -->
+                  <div class="question d-flex justify-content-center" id="questionContainer">
+                      <h4 id="question"></h4>
+                      <p>Please select the correct answer below</p>
+                  </div>
                 </div>
-
-                <!-- question container -->
-                <div class="question d-flex justify-content-center" id="questionContainer">
-                    <h4 id="question"></h4>
-                    <p>Please select the correct answer below</p>
-                </div>
-
                 <!-- options container -->
-                <div class="options d-flex justify-content-evenly gap-4" id="optionContainer">
-                  <button class="btn btn-lg bg-warning border-muted text-dark" style="min-width: 200px;">Click</button>
-                  <button class="btn btn-lg bg-warning border-muted text-dark" style="min-width: 200px;">Click</button>
-                  <button class="btn btn-lg bg-warning border-muted text-dark" style="min-width: 200px;">Click</button>
-                  <button class="btn btn-lg bg-warning border-muted text-dark" style="min-width: 200px;">Click</button>
+                <div class="options d-flex flex-wrap justify-content-center gap-4 mt-4" id="optionContainer">
+                  
                                    
                 </div>
+              </div>
           </div>
       </div>
     </div>

@@ -1,3 +1,17 @@
+const home = document.querySelector('#buttons button')
+
+home.addEventListener('click', buttonClick)
+
+function buttonClick(e) {
+    e.preventDefault()
+    window.location.assign('./dashboard.html')
+}
+
+document.getElementById('logout').addEventListener('click', () => {
+  localStorage.removeItem('token');
+  window.location.assign('./landing.html')
+})
+
 let quizData = [];
 
 // DOM elements#
@@ -53,6 +67,9 @@ function loadQuestion(quizData) {
   
   options.forEach(option => {
     const button = document.createElement('button');
+    button.className = "btn btn-lg bg-warning border-muted text-dark"
+    button.style.minWidth = "250px"
+    button.style.minHeight = '100px'
     button.textContent = option;
     button.onclick = () =>{
       checkAnswer(option, questionData.english);
