@@ -70,6 +70,7 @@ function loadQuestion(quizData) {
   optionContainer.innerHTML = '';
   options.forEach(option => {
     const button = document.createElement('button');
+    button.className = 'option-button';
     button.textContent = option;
     button.onclick = () =>{
       checkAnswer(option, questionData.english);
@@ -98,7 +99,7 @@ function checkAnswer(selected, correct) {
   }
   gameContainer.appendChild(feedback);
 
-  setTimeout(() => feedback.remove(), 2000); // Remove feedback after 2 seconds
+  setTimeout(() => feedback.remove(), 1500); // Remove feedback after 2 seconds
 }
 
 const endQuiz = () => {
