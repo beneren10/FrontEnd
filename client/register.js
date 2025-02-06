@@ -1,43 +1,48 @@
-const teacherLogin = document.querySelector('#teachers')
-const studentLogin = document.querySelector('#students')
+const teacherLogin = document.querySelector("#teachers");
+const studentLogin = document.querySelector("#students");
 
-teacherLogin.addEventListener('click', buttonClick)
-studentLogin.addEventListener('click', buttonClick)
+teacherLogin.addEventListener("click", buttonClick);
+studentLogin.addEventListener("click", buttonClick);
 
 function buttonClick(e) {
-    e.preventDefault()
-    window.location.href = "login.html";
+  e.preventDefault();
+  window.location.href = "login.html";
 }
 
-document.getElementById("registerForm").addEventListener("submit", async (e) => {
+document
+  .getElementById("registerForm")
+  .addEventListener("submit", async (e) => {
     e.preventDefault();
 
     const form = new FormData(e.target);
 
-    console.log(form)
+    console.log(form);
 
     const options = {
-        method: "POST",
-        headers: {
-            'Accept': 'application/json',
-            'Content-Type': 'application/json'
-        },
-        body: JSON.stringify({
-            firstName: form.get("firstName"),
-            lastName: form.get("lastName"),
-            student_login: form.get("student_login"),
-            password: form.get("password")
-        })
-    }
+      method: "POST",
+      headers: {
+        Accept: "application/json",
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        firstName: form.get("firstName"),
+        lastName: form.get("lastName"),
+        student_login: form.get("student_login"),
+        password: form.get("password"),
+      }),
+    };
 
-    const response = await fetch("http://localhost:3000/users/register", options);
+    const response = await fetch(
+      "https://lingoquest-backend.onrender.com/users/register",
+      options
+    );
     const data = await response.json();
-    console.log(data)
+    console.log(data);
 
     if (response.status == 201) {
-        alert("success")
-        window.location.assign("login.html");
+      alert("success");
+      window.location.assign("login.html");
     } else {
-        alert(data.error);
+      alert(data.error);
     }
-})
+  });
