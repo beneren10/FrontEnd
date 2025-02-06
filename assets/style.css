@@ -49,3 +49,14 @@ body {
     align-items: center;
 }
 
+.correct-feedback {
+    color: green;
+}
+
+.wrong-feedback {
+    color: red;
+}
+
+.full-score {
+    color: pink;
+}

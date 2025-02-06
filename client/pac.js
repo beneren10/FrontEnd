@@ -21,7 +21,6 @@ let quizState = {
 };
 
 
-
 startButton.addEventListener('click',()=>{
   if (score > 0) {
     postScore(score);
@@ -33,7 +32,7 @@ startButton.addEventListener('click',()=>{
 async function fetchQuizData() {
   try {
     const level = document.getElementById('difficulty').value;
-    const response = await fetch(`https://lingoquest-backend.onrender.com/spanish/games/translate/${level}`);
+    const response = await fetch(`https://lingoquest-backend.onrender.com/spanish/games/translate/`);
     const quizData = await response.json();
     currentQuestion = 0;
     score = 0;
@@ -106,8 +105,6 @@ const endQuiz = () => {
   quizState.endQuiz = true
   question.innerHTML = `<h2>Quiz Finished! Final Score: ${score}</h2>`;
   optionContainer.innerHTML = '';
-  startButton.style.display = 'block';
-
   postScore(score);
 }
 
