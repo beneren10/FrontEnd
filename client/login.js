@@ -20,7 +20,7 @@ document.getElementById("login-form").addEventListener("submit", async (e) => {
     console.log(data)
 
     if (response.status == 200) {
-        console.log(localStorage)
+        console.log(data.token);
         localStorage.setItem("token", data.token);
         window.location.assign('dashboard.html')
       } else {

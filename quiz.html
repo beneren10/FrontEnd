@@ -29,7 +29,7 @@
     <div class="container-fluid d-flex justify-content-center mt-5" style="border-radius: 5px;">
       <div class="row bg-white border" style="width: 95%; border-radius: 10px;">
         <div class="col-12 d-flex justify-content-center mt-5" style="min-height: 45vh;">
-          <div id="gameContainer">
+          <div id="gameContainer" >
 
                 <h2 class='mb-4'style="text-align: center;">Hola Amigos! <br>Can you Translate the Right One! 💃</h2>
 
@@ -37,12 +37,11 @@
               <div class="d-flex justify-content-center gap-3 align-items-center">
                 <label for="difficulty">Select Difficulty:</label>
                 <select id="difficulty">
-                    <option value="spanish-easy.json">Easy</option>
-                    <option value="spanish-medium.json">Medium</option>
-                    <option value="spanish-hard.json">Hard</option>
+                    <option value="easy">Easy</option>
+                    <option value="medium">Medium</option>
+                    <option value="hard">Hard</option>
                 </select>
-                <button onclick="fetchQuizData()">Start Quiz</button>
-              </div>
+                <button id="start">Start Quiz</button>
 
                 <!-- score container -->
 
