@@ -3,9 +3,9 @@ const { renderDOM } = require('./helpers');
 let dom;
 let document;
 
-describe('landing.html', () => {
+describe('register.html', () => {
   beforeEach(async () => {
-    dom = await renderDOM('./landing.html');
+    dom = await renderDOM('./register.html');
     document = await dom.window.document;
   })
 
@@ -38,9 +38,9 @@ describe('landing.html', () => {
     expect(mockFunction).toHaveBeenCalledTimes(1);
 });
 
-  it('Expect img urls to be correct', ()=>{
-    const imgOne = document.querySelector('#img-one')
-    expect(imgOne.src).toBe('file:///Users/ben/Desktop/LaFosse/ProjectTeam/FrontEnd/assets/images.png')
+  it('Expect title text to be correct', ()=>{
+    const titlePage = document.querySelector('#title-id')
+    expect(titlePage.textContent).toContain('Sign up here Compadre')
   })
 
   it('should display the header with the correct title', () => {
@@ -50,20 +50,32 @@ describe('landing.html', () => {
     expect(title.textContent).toBe('LingoQuest');
   });
 
-  it('should have the correct images attributes', () => {
-    const imgOne = document.getElementById('img-one');
-    const imgTwo = document.getElementById('img-two');
-    const imgThree = document.getElementById('img-three');
+  it('should include form element and correct', () => {
+    const formId = document.getElementById('registerForm');
+    const firstName = document.getElementById('form3Example1c')
+    const lastName = document.getElementById('form3Example2c')
+    const student_login = document.getElementById('form3Example3c')
+    const password = document.getElementById('form3Example4c')
 
-    expect(imgOne).not.toBeNull();
-    expect(imgOne.src).toContain('file:///Users/ben/Desktop/LaFosse/ProjectTeam/FrontEnd/assets/images.png');
+    expect(formId).toBeDefined()
 
-    expect(imgTwo).not.toBeNull();
-    expect(imgTwo.src).toContain('file:///Users/ben/Desktop/LaFosse/ProjectTeam/FrontEnd/assets/atlas.png');
-
-    expect(imgThree).not.toBeNull();
-    expect(imgThree.src).toContain('file:///Users/ben/Desktop/LaFosse/ProjectTeam/FrontEnd/assets/languages.png');
-
+    expect(firstName.type).toBe('text')
+    expect(firstName.name).toBe('firstName')
+    expect(lastName.type).toBe('text')
+    expect(lastName.name).toBe('lastName')
+    expect(student_login.type).toBe('text')
+    expect(student_login.name).toBe('student_login')
+    expect(password.type).toBe('password')
+    expect(password.name).toBe('password')
   });
+
+  it('should include a register button', ()=>{
+    const register = document.querySelector('#submitBtn')
+    const mockFunction = jest.fn();
+
+    expect(register).toBeDefined()
+    expect(register.type).toBe('submit')
+    expect(register.innerHTML).toBe('Register')
+  })
 })
 

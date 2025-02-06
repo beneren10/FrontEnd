@@ -47,7 +47,7 @@ async function fetchName() {
       },
     };
 
-      const response = await fetch(`http://localhost:3003/users`, options)
+      const response = await fetch(`http://localhost:3000/users`, options)
       if (response.ok) {
           const data = await response.json()
           updateName(data)

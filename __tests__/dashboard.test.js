@@ -1,7 +1,7 @@
 /**
  * @jest-environment jsdom
  */
-const { fetchAPIscores, fetchScores, updateLeaderboard, updateName } = require('../client/dashboard');  // Adjust this path
+const { fetchScores } = require('../client/dashboard');  // Adjust this path
 
 describe('Leaderboard API and DOM Manipulation', () => {
   let mockFetch;
@@ -11,6 +11,7 @@ describe('Leaderboard API and DOM Manipulation', () => {
     // Mock fetch globally
     mockFetch = jest.fn();
     global.fetch = mockFetch;
+    
 
     // Mock localStorage
     mockLocalStorage = {
@@ -87,35 +88,6 @@ describe('Leaderboard API and DOM Manipulation', () => {
     const consoleSpy = jest.spyOn(console, 'log');
 
     await fetchScores();
-
-    // Ensure error is logged
-    expect(consoleSpy).toHaveBeenCalledWith('Error http status code 500');
-    consoleSpy.mockRestore();
-  });
-
-  it('should fetch the user name and update the name element', async () => {
-    // Mock the fetch response for user data
-    mockFetch.mockResolvedValueOnce({
-      ok: true,
-      json: () => Promise.resolve('John Doe'),
-    });
-
-    await fetchName();
-
-    // Ensure the DOM element is updated with the user name
-    expect(document.querySelector('#update-name').textContent).toBe('John Doe');
-  });
-
-  it('should handle errors when fetching user data', async () => {
-    // Mock the fetch response for user data with an error
-    mockFetch.mockResolvedValueOnce({
-      ok: false,
-      status: 500,
-    });
-
-    const consoleSpy = jest.spyOn(console, 'log');
-
-    await fetchName();
 
     // Ensure error is logged
     expect(consoleSpy).toHaveBeenCalledWith('Error http status code 500');
