@@ -11,6 +11,7 @@ const optionContainer = document.getElementById('optionContainer');
 let currentQuestion = 0;
 let score = 0;
 
+
 let level = document.getElementById('difficulty').value;
 
 //quiz state variables
@@ -102,31 +103,40 @@ function checkAnswer(selected, correct) {
 }
 
 const endQuiz = () => {
-  quizState.playing = false
-  quizState.endQuiz = true
+  quizState.playing = false;
+  quizState.endQuiz = true;
+
   question.innerHTML = `<h2>Quiz Finished! Final Score: ${score}</h2>`;
   optionContainer.innerHTML = '';
   startButton.style.display = 'block';
 
+  // Post the final score after updates
   postScore(score);
-}
+};
+
 
 async function postScore(score) {
   try {
     const token = localStorage.getItem('token');
+    if (!token) {
+      alert('User not logged in. Unable to post score.');
+      return;
+    }
+  
     const options = {
       method: 'PATCH',
       headers: {
         'Content-Type': 'application/json',
-        'authorisation': token
+        'authorization': token
       },
-      body: JSON.stringify({ score })
+      body: JSON.stringify({ "score":score })
     };
-    const response = await fetch(`https://lingoquest-backend.onrender.com/student/marks/score`, options)
+    const response = await fetch(`https://lingoquest-backend.onrender.com/student/marks/score`, options);
     if (response.ok) {
       alert('Score posted successfully!');
     } else {
-      alert('Error posting score');
+      const errorData = await response.json();
+      alert(`Error posting score: ${errorData.message || 'Unknown error'}`);
     }
   } catch (error) {
     console.error('Error posting score:', error);
