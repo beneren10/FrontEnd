@@ -8,7 +8,7 @@ async function fetchScores() {
   try {
     const options = {
       headers: {
-        Authorization: localStorage.getItem("token"),
+        authorisation: localStorage.getItem("token"),
       },
     };
     const response = await fetch(
@@ -40,38 +40,10 @@ function updateLeaderboard(scores) {
   document.querySelector("#score-three").textContent = scores[2].total_marks;
 }
 
-window.addEventListener("DOMContentLoaded", fetchName);
-
-async function fetchName() {
-  try {
-    const options = {
-      headers: {
-        authorisation: localStorage.getItem("token"),
-      },
-    };
-
-    const response = await fetch(
-      `https://lingoquest-backend.onrender.com/users`,
-      options
-    );
-    if (response.ok) {
-      const data = await response.json();
-      updateName(data);
-    } else {
-      throw "Error http status code " + response.status;
-    }
-  } catch (err) {
-    console.log(err);
-  }
-}
-
-function updateName(data) {
-  document.querySelector("#update-name").textContent = data;
-}
-
 module.exports = {
   fetchAPIscores,
   fetchScores,
   updateLeaderboard,
-  updateName,
 };
+
+
