@@ -8,7 +8,7 @@ async function fetchScores() {
   try {
     const options = {
       headers: {
-        authorisation: localStorage.getItem("token"),
+        authorization: localStorage.getItem("token"),
       },
     };
     const response = await fetch(
