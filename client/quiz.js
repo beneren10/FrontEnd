@@ -11,10 +11,6 @@ let score = 0;
 
 startButton.addEventListener('click',()=>{
   fetchQuizData();
-  if (score > 0) {
-    postScore(score);
-    scores.textContent = 0;
-  }
 });
 
 async function fetchQuizData() {
@@ -33,7 +29,8 @@ async function fetchQuizData() {
 
 function loadQuestion(quizData) {
   if (currentQuestion >= quizData.length) {
-   question.innerHTML = `<h2>Quiz Finished! Final Score: ${score}</h2>`;
+    question.innerHTML = `<h2>Quiz Finished! Final Score: ${score}</h2>`;
+    postScore(score);
     return;
   }
 
@@ -77,14 +74,16 @@ function checkAnswer(selected, correct) {
 
 async function postScore(score) {
   try {
+    const token = localStorage.getItem('token');
     const options = {
       method: 'PATCH',
       headers: {
-        'Content-Type': 'application/json'
+        'Content-Type': 'application/json',
+        'authorisation': token
       },
       body: JSON.stringify({ score })
     };
-    const response = await fetch(`http://localhost:3000/spanish/games/score`, options)
+    const response = await fetch(`http://localhost:3000/student/marks/score`, options)
     if (response.ok) {
       alert('Score posted successfully!');
     } else {
