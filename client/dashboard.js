@@ -1,11 +1,8 @@
-const leaderboard = document.querySelector('#leaderboard')
-
 window.addEventListener('DOMContentLoaded', fetchAPIscores)
 
 function fetchAPIscores(){
     fetchScores()
 }
-
 
 async function fetchScores() {
     try {
@@ -14,7 +11,7 @@ async function fetchScores() {
           Authorization: localStorage.getItem("token"),
         },
       };
-        const response = await fetch(`http://localhost:3003/users`, options)
+        const response = await fetch(`http://localhost:3000/student/marks/leaders`, options)
         if (response.ok) {
             const postedCard = await response.json()
             updateLeaderboard(postedCard)
@@ -26,37 +23,18 @@ async function fetchScores() {
     }
 }
 
-scores = [
-    {
-      "First": "Mark",
-      "Last": "Otto",
-      "Score": 10
-    },
-    {
-      "First": "Jacob",
-      "Last": "Eren",
-      "Score": 8
-    },
-    {
-      "First": "Benjamin",
-      "Last": "the Bean",
-      "Score": 5
-    }
-  ]
-  
-
 function updateLeaderboard(scores){
-    document.querySelector('#first-one').textContent = scores[0].First
-    document.querySelector('#last-one').textContent = scores[0].Last
-    document.querySelector('#score-one').textContent = scores[0].Score
+    document.querySelector('#first-one').textContent = scores[0].firstname
+    document.querySelector('#last-one').textContent = scores[0].lastname
+    document.querySelector('#score-one').textContent = scores[0].total_marks
    
-    document.querySelector('#first-two').textContent = scores[1].First
-    document.querySelector('#last-two').textContent = scores[1].Last
-    document.querySelector('#score-two').textContent = scores[1].Score
+    document.querySelector('#first-two').textContent = scores[1].firstname
+    document.querySelector('#last-two').textContent = scores[1].lastname
+    document.querySelector('#score-two').textContent = scores[1].total_marks
 
-    document.querySelector('#first-three').textContent = scores[2].First
-    document.querySelector('#last-three').textContent = scores[2].Last
-    document.querySelector('#score-three').textContent = scores[2].Score
+    document.querySelector('#first-three').textContent = scores[2].firstname
+    document.querySelector('#last-three').textContent = scores[2].lastname
+    document.querySelector('#score-three').textContent = scores[2].total_marks
 }
 
 window.addEventListener('DOMContentLoaded', fetchName)
@@ -83,4 +61,8 @@ async function fetchName() {
 
 function updateName(data){
   document.querySelector('#update-name').textContent = data
+}
+
+module.exports = {
+  fetchAPIscores, fetchScores, updateLeaderboard, updateName
 }

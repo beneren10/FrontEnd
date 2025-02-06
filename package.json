@@ -1,7 +1,7 @@
 {
   "name": "frontend",
   "version": "1.0.0",
-  "main": "index.js",
+  "main": "landing.js",
   "scripts": {
     "dev": "live-server",
     "test": "jest --watchAll --verbose",
@@ -15,5 +15,13 @@
     "jsdom": "^26.0.0",
     "live-server": "^1.2.2"
   },
-  "description": ""
+  "description": "",
+  "devDependencies": {
+    "jest-environment-jsdom": "^29.7.0"
+  },
+  "jest": {
+    "testPathIgnorePatterns": [
+      "./__tests__/helpers.js"
+    ]
+  }
 }
